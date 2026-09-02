@@ -10,7 +10,7 @@
         <div class="col col-lg-5 col-sm-10">
             <input type="text" id="tbNombre" name="tbNombre" placeholder="Nombre..." required class="textBoxControl w-lg-10"><br>
             <input type="text" id="tbDescripcion" name="tbDescripcion" placeholder="Descripción..." class="textBoxControl w-lg-10"><br>
-            <input type="number" id="tbCantidad" name="tbCantidad" placeholder="Cantidad..." class="textBoxControl w-lg-10"><br>
+            <input type="number" id="tbCantidad" name="tbCantidad" placeholder="Cantidad..." required class="textBoxControl w-lg-10"><br>
         </div>
     </div>
     <br>

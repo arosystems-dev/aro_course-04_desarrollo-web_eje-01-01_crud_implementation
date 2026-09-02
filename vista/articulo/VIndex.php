@@ -39,15 +39,15 @@
                 foreach ($articulos as $a) {
                     echo ('
                   <tr>                    
-                    <td class="w-lg-1 textCenter">' . $a['idArticulo'] . '</td>
+                    <td class="w-lg-1 textCenter">' . $a['id'] . '</td>
                     <td class="w-lg-2">' . $a['nombre'] . '</td>
                     <td class="w-lg-3 descripcion">' . $a['descripcion'] . '</td>
                     <td class="w-lg-2 textCenter">' . $a['cantidad'] . '</td>
                     <td class="w-lg-2 textCenter"> 
-                        <a class="imgEditar" href="?control=CArticulo&accion=edit&id=' . $a['idArticulo'] . '">
+                        <a class="imgEditar" href="?control=CArticulo&accion=edit&id=' . $a['id'] . '">
                             <img src="vista/public/img/editar.png" alt="Editar">
                         </a>&nbsp;&nbsp;&nbsp;
-                        <a class="imgEliminar" href="?control=CArticulo&accion=destroy&id=' . $a['idArticulo'] . '">                           
+                        <a class="imgEliminar" href="?control=CArticulo&accion=destroy&id=' . $a['id'] . '">                           
                             <img src="vista/public/img/eliminar.png" alt="Eliminar">
                         </a>
                     </td>

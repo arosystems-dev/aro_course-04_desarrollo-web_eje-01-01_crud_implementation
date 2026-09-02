@@ -10,7 +10,7 @@ require_once('modelo/db/ConexionPDO.php');
 class MArticulo
 {
     // ATRIBUTOS
-    public $idArticulo;
+    public $id;
     public $nombre;
     public $descripcion;
     public $cantidad;
@@ -21,7 +21,7 @@ class MArticulo
     public static function all()
     {
         $conexion = ConexionPDO::openConexion();
-        $consulta = $conexion->prepare('SELECT * FROM articulo WHERE (estado=1) ORDER BY idArticulo DESC');
+        $consulta = $conexion->prepare('SELECT * FROM articulo WHERE (estado=1) ORDER BY id DESC');
         $consulta->execute();
         $articulos = $consulta->fetchAll();
         return $articulos;
@@ -31,7 +31,7 @@ class MArticulo
     public static function search($criterio)
     {
         $conexion = ConexionPDO::openConexion();
-        $consulta = $conexion->prepare('SELECT * FROM articulo WHERE (estado=1) AND (nombre LIKE "%' . $criterio . '%" OR descripcion LIKE "%' . $criterio . '%" OR cantidad LIKE "%' . $criterio . '%")  ORDER BY idArticulo DESC');
+        $consulta = $conexion->prepare('SELECT * FROM articulo WHERE (estado=1) AND (nombre LIKE "%' . $criterio . '%" OR descripcion LIKE "%' . $criterio . '%" OR cantidad LIKE "%' . $criterio . '%")  ORDER BY id DESC');
         $consulta->execute();
         $articulos = $consulta->fetchAll();
         return $articulos;
@@ -41,12 +41,12 @@ class MArticulo
     public static function find($id)
     {
         $conexion = ConexionPDO::openConexion();
-        $consulta = $conexion->prepare('SELECT * FROM articulo WHERE (estado=1) AND (idArticulo = ' . $id . ')');
+        $consulta = $conexion->prepare('SELECT * FROM articulo WHERE (estado=1) AND (id = ' . $id . ')');
         $consulta->execute();
         $fila = $consulta->fetch();
         // SE CREA EL OBJETO
         $articulo = new MArticulo();
-        $articulo->idArticulo = $fila['idArticulo'];
+        $articulo->id = $fila['id'];
         $articulo->nombre = $fila['nombre'];
         $articulo->descripcion = $fila['descripcion'];
         $articulo->cantidad = $fila['cantidad'];
@@ -67,7 +67,7 @@ class MArticulo
     public function update($id)
     {
         $conexion = ConexionPDO::openConexion();
-        $consulta = $conexion->prepare('UPDATE articulo SET nombre = ?, descripcion = ?, cantidad = ?, estado = ? WHERE idArticulo = ?');
+        $consulta = $conexion->prepare('UPDATE articulo SET nombre = ?, descripcion = ?, cantidad = ?, estado = ? WHERE id = ?');
         $consulta->execute(array($this->nombre, $this->descripcion, $this->cantidad, $this->estado, $id));
     }
 
@@ -75,7 +75,7 @@ class MArticulo
     public function delete($id)
     {
         $conexion = ConexionPDO::openConexion();
-        $consulta = $conexion->prepare('UPDATE articulo SET estado = ? WHERE idArticulo = ?');
+        $consulta = $conexion->prepare('UPDATE articulo SET estado = ? WHERE id = ?');
         $consulta->execute(array($this->estado, $id));
     }
 }

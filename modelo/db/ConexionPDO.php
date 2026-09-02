@@ -10,7 +10,7 @@ class ConexionPDO
     private static $servidor = "mysql:host=localhost";
     private static $user = "root";
     private static $password = "";
-    private static $db = "dbname=aro_pry-03-01_eje-01_crud";
+    private static $db = "dbname=aro_course-04_desarrollo-web_eje-01-01_crud";
     private static $codificacion = "utf8mb4";
 
 

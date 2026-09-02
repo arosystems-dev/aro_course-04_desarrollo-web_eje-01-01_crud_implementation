@@ -52,7 +52,7 @@
         </nav>
 
         <!-- SECTION -->
-        <section>            
+        <section>
             <article>
                 <?php
                 include_once('route/route.php');
@@ -61,7 +61,7 @@
 
             <!-- FOOTER -->
             <footer>
-                <small><i>AroSystems &copy; 2026</i></small>
+                <small><i>AroSystems.dev &copy; 2026</i></small>
             </footer>
         </section>
     </main>

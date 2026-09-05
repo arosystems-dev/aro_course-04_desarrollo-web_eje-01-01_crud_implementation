@@ -1,4 +1,5 @@
-# CRUD DE ARTÍCULOS (PHP NATIVO)
+# CRUD DE ARTÍCULOS
+**TECNOLOGÍAS: HTML5 · CSS3 · JavaScript · PHP · MySQL**
 
 ## 1. Requisitos
 
